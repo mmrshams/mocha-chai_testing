@@ -15,10 +15,14 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
-    "mocha": "^2.4.5"
+    "@pact-foundation/pact": "^7.0.3",
+    "mocha": "^5.2.0"
   },
   "scripts": {
     "start": "set NODE_ENV=dev && node index.js",
-    "test": "mocha --timeout 10000"
+    "test": "mocha --timeout 10000",
+    "test:pact:consumer": "mocha pact-package/src/consumer/*.spec.js --exit",
+    "test:pact:provider": "mocha pact-package/src/provider/*.spec.js --exit",
+    "publish:pact": "node pact-package/pact/publish.js"
   }
 }

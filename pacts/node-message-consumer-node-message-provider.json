@@ -1,0 +1,62 @@
+{
+  "consumer": {
+    "name": "node-message-consumer"
+  },
+  "provider": {
+    "name": "node-message-provider"
+  },
+  "messages": [
+    {
+      "description": "a user created message",
+      "providerStates": [
+
+      ],
+      "contents": {
+        "name": "omid",
+        "lastname": "shams",
+        "age": 12,
+        "code": 231
+      },
+      "matchingRules": {
+        "body": {
+          "$.name": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.lastname": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.age": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.code": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          }
+        }
+      },
+      "metaData": {
+        "content-type": "application/json"
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  }
+}
